@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 // get one product by its id, included associated category and tag data
 router.get('/:id', (req, res) => {
   Product.findOne({
-    include: [{model:Category},{model:Tag}]
+    include: [{model:Category}, {model:Tag}]
   }).then((ProductData) => {
     res.json(ProductData);
   })
